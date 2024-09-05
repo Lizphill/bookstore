@@ -26,7 +26,7 @@
             ':user_id' => $user_id,
         ]);
 
-        
+
 
     }
 
@@ -107,6 +107,12 @@
 
         $(document).on("submit", function(e){
             var $formdata = $("#form-data").serialize()+'&submit=submit';
+
+            $,ajax({
+                type: "post",
+                url: "single.php?id=<?php echo $id; ?>",
+                data: formdata,
+            })
         })
 });
 </script>
