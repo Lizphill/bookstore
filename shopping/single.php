@@ -14,7 +14,7 @@
 
         $insert = $conn->prepare("INSERT INTO cart (pro_id, pro_name, pro_image, pro_price,
         pro_amount, pro_file, user_id) VALUES(:pro_id, :pro_name, :pro_image, :pro_price,
-        :pro_amount, :pro_file, :user_id)")
+        :pro_amount, :pro_file, :user_id)");
 
         $insert->execute([
             ':pro_id' => $pro_id,
@@ -106,13 +106,17 @@
     $(document).ready(function(){
 
         $(document).on("submit", function(e){
-            var $formdata = $("#form-data").serialize()+'&submit=submit';
+            var formdata = $("#form-data").serialize()+'&submit=submit';
 
             $,ajax({
                 type: "post",
                 url: "single.php?id=<?php echo $id; ?>",
                 data: formdata,
+
+                success: function() {
+                    alert("added to cart successfully");
+                }
             })
         })
-});
+    });
 </script>
