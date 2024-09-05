@@ -71,3 +71,9 @@
         </div>
         
 <?php require "../includes/footer.php"; ?>   
+
+<script>
+    $(document).ready(function(){
+        console.log("hello");
+});
+</script>
