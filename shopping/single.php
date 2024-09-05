@@ -78,7 +78,7 @@
 <script>
     $(document).ready(function(){
         $(document).on("submit", function(e){
-            
+            alert('clicked');
         })
 });
 </script>
