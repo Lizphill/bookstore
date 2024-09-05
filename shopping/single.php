@@ -77,6 +77,8 @@
 
 <script>
     $(document).ready(function(){
-        console.log("hello");
+        $(document).on("submit", function(e){
+            
+        })
 });
 </script>
