@@ -95,8 +95,9 @@
                                     <div class="cart mt-4 align-items-center"> 
                                         <?php if($row->rowCount > 0) : ?>
                                             <button id="submit" name="submit" type="submit" disabled class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Added to cart</button>
-
-                                    <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                                        <?php else : ?>
+                                            <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                                        <?php endif; ?>
                                     </div>
                                 </form>
                             </div>
