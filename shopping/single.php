@@ -34,9 +34,11 @@
 
         $id = $_GET['id'];
 
+        //checking for product in cart
         $select = $conn->query("SELECT * FROM cart WHERE pro_id ='$id' AND user_id='$_SESSION[user_id]'");
         $select->execute();
 
+        //getting data for every product
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id='$id'");
         $row->execute();
 
@@ -93,7 +95,7 @@
                                         <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" class="form-control">
                                     </div>
                                     <div class="cart mt-4 align-items-center"> 
-                                        <?php if($row->rowCount > 0) : ?>
+                                        <?php if($select->rowCount() > 0) : ?>
                                             <button id="submit" name="submit" type="submit" disabled class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Added to cart</button>
                                         <?php else : ?>
                                             <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button>
