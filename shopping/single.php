@@ -34,6 +34,9 @@
 
         $id = $_GET['id'];
 
+        $select = $conn->query("SELECT * FROM cart WHERE pro_id ='$id' AND user_id='$_SESSION[user_id]'");
+        $select->execute();
+        
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id='$id'");
         $row->execute();
 
