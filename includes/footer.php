@@ -1,6 +1,6 @@
 </div>
        
-    <footer class="bg-dark text-white text-center text-lg-start" style="margin-top: 150px">
+    <footer class="bg-dark text-white text-center text-lg-start" style="margin-top: 120px">
         <!-- Grid container -->
         <div class="container p-4">
             <!--Grid row-->
