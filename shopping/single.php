@@ -40,7 +40,7 @@
             $select->execute();
         }
 
-        
+
         //getting data for every product
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id='$id'");
         $row->execute();
@@ -94,9 +94,11 @@
                                     <div class="">
                                         <input type="text" name="pro_file" value="<?php echo $product->file; ?>" class="form-control">
                                     </div>
-                                    <div class="">
-                                        <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" class="form-control">
-                                    </div>
+                                    <?php if(isset($_SESSION['user_id'])) : ?>
+                                        <div class="">
+                                            <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" class="form-control">
+                                        </div>
+                                    <?php endif; ?>
                                     <div class="cart mt-4 align-items-center"> 
                                         <?php if($select->rowCount() > 0) : ?>
                                             <button id="submit" name="submit" type="submit" disabled class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Added to cart</button>
