@@ -35,9 +35,12 @@
         $id = $_GET['id'];
 
         //checking for product in cart
-        $select = $conn->query("SELECT * FROM cart WHERE pro_id ='$id' AND user_id='$_SESSION[user_id]'");
-        $select->execute();
+        if(isset($_SESSION['user_id'])) {
+            $select = $conn->query("SELECT * FROM cart WHERE pro_id ='$id' AND user_id='$_SESSION[user_id]'");
+            $select->execute();
+        }
 
+        
         //getting data for every product
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id='$id'");
         $row->execute();
