@@ -16,7 +16,6 @@
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 class="mb-0 text-muted">2 items</h6>
                   </div>
 
 
@@ -36,12 +35,12 @@
                     <tbody>
                       <?php foreach($allproducts as $product) : ?>
                       <tr class="mb-4">
-                        <th scope="row"><?php echo $product->pro_id; ?></th>
+                        <th scope="row"><?php echo $product->id; ?></th>
                         <td><img width="100" height="100"
                         src="../images/<?php echo $product->pro_image; ?>"
                         class="img-fluid rounded-3" alt="Cotton T-shirt">
                         </td>
-                        <td><?php $product->pro_name; ?></td>
+                        <td><?php echo $product->pro_name; ?></td>
                         <td>$<?php echo $product->pro_price; ?></td>
                         <td><input id="form1" min="1" name="quantity" value="<?php echo $product->pro_amount; ?>" type="number"
                         class="form-control form-control-sm" /></td>
@@ -54,7 +53,7 @@
 
                     </tbody>
                   </table>
-                  <a href="#" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i>  Continue Shopping</a>
+                  <a href="<?php echo APPURL; ?>" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i>  Continue Shopping</a>
                 </div>
               </div>
               <div class="col-lg-4 bg-grey">
