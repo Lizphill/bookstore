@@ -36,16 +36,16 @@
                     <tbody>
                       <?php foreach($allproducts as $product) : ?>
                       <tr class="mb-4">
-                        <th scope="row"><?php $product->pro_id; ?></th>
+                        <th scope="row"><?php echo $product->pro_id; ?></th>
                         <td><img width="100" height="100"
-                        src="../images/<?php $product->pro_image; ?>"
+                        src="../images/<?php echo $product->pro_image; ?>"
                         class="img-fluid rounded-3" alt="Cotton T-shirt">
                         </td>
                         <td><?php $product->pro_name; ?></td>
-                        <td>$20</td>
-                        <td><input id="form1" min="1" name="quantity" value="<?php $product->pro_amount; ?>" type="number"
+                        <td>$<?php echo $product->pro_price; ?></td>
+                        <td><input id="form1" min="1" name="quantity" value="<?php echo $product->pro_amount; ?>" type="number"
                         class="form-control form-control-sm" /></td>
-                        <td><?php $product->pro_price; ?></td>
+                        <td>$123</td>
                         <td><button class="btn btn-warning text-white"><i class="fas fa-pen"></i> </button></td>
                       
                         <td><button class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </button></td>
