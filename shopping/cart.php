@@ -112,12 +112,12 @@
                         data: {
                           update: "update",
                           id: id,
-                          product_amount: pro_amount
+                          pro_amount: pro_amount
                         },
 
                         success: function() {
                          // alert("done");
-                          reload();
+                          // reload();
                         }
                       })
                     });
@@ -140,11 +140,11 @@
         }, 4000);
       } 
       
-      // function reload() {
+      function reload() {
 
        
-      //       $("body").load("cart.php")
+            $("body").load("cart.php")
        
-      // }
+      }
     });
 </script>
