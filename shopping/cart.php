@@ -29,6 +29,7 @@
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Total Price</th>
+                        <th scope="col">Update</th>
                         <th scope="col"><a href="#" class="btn btn-danger text-white">Clear</a></th>
                       </tr>
                     </thead>
@@ -45,11 +46,12 @@
                         <td><input id="form1" min="1" name="quantity" value="<?php $product->pro_amount; ?>" type="number"
                         class="form-control form-control-sm" /></td>
                         <td><?php $product->pro_price; ?></td>
-                        <td><button class="btn btn-warning text-white"><i class="fas fa-trash-alt"></i> </button></td>
+                        <td><button class="btn btn-warning text-white"><i class="fas fa-pen"></i> </button></td>
                       
                         <td><button class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </button></td>
                       </tr>
-                      
+                      <?php endforeach; ?>
+
                     </tbody>
                   </table>
                   <a href="#" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i>  Continue Shopping</a>
