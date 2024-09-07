@@ -8,7 +8,7 @@
         $pro_amount = $_POST['pro_amount'];
 
         $update = $conn->prepare("UPDATE cart SET pro_amount ='$pro_amount' WHERE id='$id'");
-        
+        $update->execute();
     }
 
 ?>
