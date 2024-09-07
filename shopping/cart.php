@@ -45,7 +45,9 @@
                         <td><input id="form1" min="1" name="quantity" value="<?php $product->pro_amount; ?>" type="number"
                         class="form-control form-control-sm" /></td>
                         <td><?php $product->pro_price; ?></td>
-                        <td><a href="#" class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </a></td>
+                        <td><button class="btn btn-warning text-white"><i class="fas fa-trash-alt"></i> </button></td>
+                      
+                        <td><button class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </button></td>
                       </tr>
                       
                     </tbody>
