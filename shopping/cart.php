@@ -1,7 +1,12 @@
 <?php require "../includes/header.php"; ?>   
 <?php require "../config/config.php"; ?>   
+<?php
+  $products = $conn->query("SELECT * FROM cart WHERE user_id ='$_SESSION[user_id]'");
+  $products->execute();
 
+  $allproducts = $products->fetchAll(PDO::FETCH_OBJ);
 
+?>
     <div class="row d-flex justify-content-center align-items-center h-100 mt-5 mt-5">
       <div class="col-12">
         <div class="card card-registration card-registration-2" style="border-radius: 15px;">
@@ -28,45 +33,21 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php foreach($allproducts as $product) : ?>
                       <tr class="mb-4">
-                        <th scope="row">1</th>
+                        <th scope="row"><?php $product->pro_id; ?></th>
                         <td><img width="100" height="100"
-                        src="../images/django.png"
+                        src="../images/<?php $product->pro_image; ?>"
                         class="img-fluid rounded-3" alt="Cotton T-shirt">
                         </td>
-                        <td>Django Book</td>
+                        <td><?php $product->pro_name; ?></td>
                         <td>$20</td>
-                        <td><input id="form1" min="1" name="quantity" value="1" type="number"
+                        <td><input id="form1" min="1" name="quantity" value="<?php $product->pro_amount; ?>" type="number"
                         class="form-control form-control-sm" /></td>
-                        <td>$120</td>
+                        <td><?php $product->pro_price; ?></td>
                         <td><a href="#" class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </a></td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td><img width="100" height="100"
-                        src="../images/node.png"
-                        class="img-fluid rounded-3" alt="Cotton T-shirt">
-                        </td>
-                        <td>Node Book</td>
-                        <td>$20</td>
-                        <td><input id="form1" min="1" name="quantity" value="1" type="number"
-                        class="form-control form-control-sm" /></td>
-                        <td>$120</td>
-                        <td><a href="#" class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td><img width="100" height="100"
-                        src="../images/html5.jpg"
-                        class="img-fluid rounded-3" alt="Cotton T-shirt">
-                        </td>
-                        <td>HTML5 Book</td>
-                        <td>$20</td>
-                        <td><input id="form1" min="1" name="quantity" value="1" type="number"
-                        class="form-control form-control-sm" /></td>
-                        <td>$120</td>
-                        <td><a href="#" class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </a></td>
-                      </tr>
+                      
                     </tbody>
                   </table>
                   <a href="#" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i>  Continue Shopping</a>
