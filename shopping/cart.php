@@ -44,8 +44,8 @@
                         <td class="pro_price"><?php echo $product->pro_price; ?></td>
                         <td><input id="form1" min="1" name="quantity" value="<?php echo $product->pro_amount; ?>" type="number"
                         class="form-control form-control-sm pro_amount" /></td>
-                        <td class="total_price"></td>
-                        <td><button class="btn btn-warning text-white"><i class="fas fa-pen"></i> </button></td>
+                        <td class="total_price"><?php echo $product->pro_price * $product->pro_amount; ?></td>
+                        <td><button value="<?php echo $product->id; ?>" class="btn-update btn-warning text-white"><i class="fas fa-pen"></i> </button></td>
                       
                         <td><button class="btn btn-danger text-white"><i class="fas fa-trash-alt"></i> </button></td>
                       </tr>
@@ -101,26 +101,26 @@
 
                   $el.find(".total_price").append(total+'$');
 
-                  // $(".btn-update").on('click', function(e) {
+                  $(".btn-update").on('click', function(e) {
 
-                  //     var id = $(this).val();
+                      var id = $(this).val();
                     
 
-                  //     $.ajax({
-                  //       type: "POST",
-                  //       url: "update-item.php",
-                  //       data: {
-                  //         update: "update",
-                  //         id: id,
-                  //         product_amount: pro_amount
-                  //       },
+                      $.ajax({
+                        type: "POST",
+                        url: "update-item.php",
+                        data: {
+                          update: "update",
+                          id: id,
+                          product_amount: pro_amount
+                        },
 
-                  //       success: function() {
-                  //        // alert("done");
-                  //         reload();
-                  //       }
-                  //     })
-                  //   });
+                        success: function() {
+                         // alert("done");
+                          reload();
+                        }
+                      })
+                    });
                  
                 
            fetch();     
